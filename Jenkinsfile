@@ -6,11 +6,6 @@ pipeline {
         SONAR_HOME = tool "sonar"
     }
     
-    parameters {
-        string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
-        string(name: 'BACKEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
-    }
-    
     stages {
         
         stage("Workspace cleanup"){
@@ -57,30 +52,6 @@ pipeline {
             steps{
                 script{
                     sonarqube_code_quality()
-                }
-            }
-        }
-        
-        stage('Exporting environment variables') {
-            parallel{
-                stage("Backend env setup"){
-                    steps {
-                        script{
-                            dir("Automations"){
-                                sh "bash updatebackendnew.sh"
-                            }
-                        }
-                    }
-                }
-                
-                stage("Frontend env setup"){
-                    steps {
-                        script{
-                            dir("Automations"){
-                                sh "bash updatefrontendnew.sh"
-                            }
-                        }
-                    }
                 }
             }
         }
