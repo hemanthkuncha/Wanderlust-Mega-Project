@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: madhupdevops/wanderlust-frontend-beta:36
+          image: hemanthuser/wanderlust-frontend-beta:36
           ports:
             - containerPort: 5173
 ---
