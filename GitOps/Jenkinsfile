@@ -30,8 +30,8 @@ pipeline {
         stage('Verify: Docker Image Tags') {
             steps {
                 script{
-                    echo "FRONTEND_DOCKER_TAG: ${env.BUILD_NUMBER}"
-                    echo "BACKEND_DOCKER_TAG: ${env.BUILD_NUMBER}"
+                    echo "FRONTEND_DOCKER_TAG: ${params.FRONTEND_DOCKER_TAG}"
+                    echo "BACKEND_DOCKER_TAG: ${params.BACKEND_DOCKER_TAG}"
                 }
             }
         }
