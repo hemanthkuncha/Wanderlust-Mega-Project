@@ -10,4 +10,5 @@ integration of frontend and backend with accessible network like using nodeip:po
 
 
 frontend - http://10.0.0.40:31000
-backend - http://10.0.0.40:31100/api/tasks
+
+backend - http://10.0.0.40:31100
